@@ -1,0 +1,74 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0.0",
+      "title": "URL Shortener API",
+      "description": "An API for shortening URLs"
+    },
+    "paths": {
+      "/api/create": {
+        "get": {
+          "summary": "Create a short URL",
+          "description": "Generate a short URL either with a custom alias or a random hex.",
+          "parameters": [
+            {
+              "name": "alias",
+              "in": "query",
+              "required": false,
+              "type": "string",
+              "description": "Custom alias for the short URL. If not provided, a random hex will be generated."
+            },
+            {
+              "name": "url",
+              "in": "query",
+              "required": true,
+              "type": "string",
+              "description": "The URL to be shortened."
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Successful response",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "success": { "type": "boolean", "example": true },
+                  "error": { "type": "string", "example": null },
+                  "response": {
+                    "type": "object",
+                    "properties": {
+                      "url": { "type": "string", "example": "http://originalurl.com" },
+                      "short": { "type": "string", "example": "http://shortenedurl.com/abc123" }
+                    }
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Bad Request",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "success": { "type": "boolean", "example": false },
+                  "error": { "type": "string", "example": "Invalid URL or missing 'url' parameter" },
+                  "response": { "type": "null" }
+                }
+              }
+            },
+            "409": {
+              "description": "Conflict",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "success": { "type": "boolean", "example": false },
+                  "error": { "type": "string", "example": "Alias is already in use" },
+                  "response": { "type": "null" }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  

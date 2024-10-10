@@ -1,0 +1,18 @@
+// prisma/schema.prisma
+
+datasource db {
+  provider = "sqlite" // or use other DB like postgresql or mysql
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Url {
+  id        Int      @id @default(autoincrement())
+  url       String
+  path      String?  @unique
+  alias     String?  @unique
+  createdAt DateTime @default(now())
+}
