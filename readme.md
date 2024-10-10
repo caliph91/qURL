@@ -1,6 +1,4 @@
-Here’s a basic `README.md` file for your project named **qURL**. You can modify it according to any additional features or details you want to add later.
 
-```markdown
 # qURL
 
 **qURL** is a simple URL shortening service built with Node.js, Express, and Prisma. It provides an API to shorten URLs, supports custom aliases, and redirects users to the original URLs. It also integrates Prisma as the database ORM for managing shortened URLs.
@@ -204,14 +202,3 @@ Feel free to open issues or pull requests if you'd like to contribute. Any feedb
 - [Express.js](https://expressjs.com/)
 - [Node.js](https://nodejs.org/)
 - [Swagger UI](https://swagger.io/tools/swagger-ui/)
-```
-
-### Key Sections:
-- **Project Overview**: Briefly explains the purpose and features of the project.
-- **Installation**: Provides steps for setting up and running the project locally.
-- **API Endpoints**: Describes the key endpoints with examples.
-- **Database**: Explains Prisma and migration steps.
-- **Deployment**: Instructions for deploying the project to services like Heroku.
-- **Contributing and License**: Information about how to contribute and the project's licensing.
-
-Feel free to add or modify sections as necessary for your project.
